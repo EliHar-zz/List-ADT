@@ -24,15 +24,15 @@ class ArrayList(object):
         self.array = temp
         self.capacity = newCapacity
 
-    def replace(self, index, aValue):
+    def replace(self, index, data):
         if index+1 <= self.capacity:
             temp = self.array[index]
-            self.array[index] = aValue
+            self.array[index] = data
             return temp
 
-    def insert(self, index, aValue):
+    def insert(self, index, data):
         if index+1 <= self.capacity:
-            self.array.insert(index, aValue)
+            self.array.insert(index, data)
             self.capacity += 1
             self.size += 1
 

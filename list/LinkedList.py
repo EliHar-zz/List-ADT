@@ -1,6 +1,6 @@
 __author__ = 'Elias Haroun'
 
-from Lists.Node import *
+from List_ADT.list.Node import *
 
 class LinkedList(object):
     def __init__(self):
@@ -19,9 +19,9 @@ class LinkedList(object):
     def setHead(self, aNode):
         self.head = aNode
 
-    def insertLast(self, aValue):
+    def insertLast(self, data):
 
-        newNode = Node(aValue, None, None)
+        newNode = Node(data, None, None)
 
         if self.isEmpty():
             self.setHead(newNode)
@@ -33,8 +33,8 @@ class LinkedList(object):
 
         self.size += 1
 
-    def insertFirst(self, aValue):
-        newNode = Node(aValue, None, None)
+    def insertFirst(self, data):
+        newNode = Node(data, None, None)
         newNode.setNext(self.getHead())
         self.setHead(newNode)
         self.size += 1
@@ -60,18 +60,18 @@ class LinkedList(object):
         temp = self.getHead()
 
         while temp:
-            result.append(temp.getValue())
+            result.append(temp.getData())
             temp = temp.getNext()
 
         print(result)
 
-    # Finds the first occurance of the value and returns its index
-    def find(self, aValue):
+    # Finds the first occurance of the data and returns its index
+    def find(self, data):
         index = 0
         temp = self.getHead()
 
         while temp:
-            if temp.getValue() == aValue:
+            if temp.getData() == data:
                 return index
 
             index += 1

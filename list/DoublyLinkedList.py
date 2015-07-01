@@ -1,6 +1,6 @@
 __author__ = 'Elias Haroun'
 
-from Lists.Node import *
+from List_ADT.list.Node import *
 
 class DoublyLinkedList(object):
     def __init__(self):
@@ -26,9 +26,9 @@ class DoublyLinkedList(object):
     def setTail(self, aNode):
         self.tail = aNode
 
-    def insertLast(self, aValue):
+    def insertLast(self, data):
 
-        newNode = Node(aValue, None, None)
+        newNode = Node(data, None, None)
 
         if self.isEmpty():
             self.setHead(newNode)
@@ -40,9 +40,9 @@ class DoublyLinkedList(object):
 
         self.size += 1
 
-    def insertFirst(self, aValue):
+    def insertFirst(self, data):
 
-        newNode = Node(aValue, None, None)
+        newNode = Node(data, None, None)
 
         if self.isEmpty():
             self.setHead(newNode)
@@ -78,13 +78,13 @@ class DoublyLinkedList(object):
 
         print(result)
 
-    # Finds the first occurance of the value and returns its index
-    def find(self, aValue):
+    # Finds the first occurance of the data and returns its index
+    def find(self, data):
         index = 0
         temp = self.getHead()
 
         while temp:
-            if temp.getValue() == aValue:
+            if temp.getValue() == data:
                 return index
 
             index += 1
